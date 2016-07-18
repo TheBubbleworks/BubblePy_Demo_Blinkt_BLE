@@ -174,10 +174,10 @@ Adabpted from Google's Dotti Web BLuetooth demo to BubblePy and Blinkt by wayne@
         picker.shape = 'huebox';
         progress.hidden = true;
 
- 	    //var SERVICE_UUID =  '0000fff0-0000-1000-8000-00805f9b34fb';
-        //var CHAR_UUID =    '0000fff3-0000-1000-8000-00805f9b34fb';
-        var SERVICE_UUID = '6e400001-b5a3-f393-e0a9-e50e24dcca9e';
-        var CHAR_UUID = '6e400002-b5a3-f393-e0a9-e50e24dcca9e';
+ 	    var SERVICE_UUID =  '0000fff0-0000-1000-8000-00805f9b34fb';
+        var CHAR_UUID =    '0000fff3-0000-1000-8000-00805f9b34fb';
+        //var SERVICE_UUID = '6e400001-b5a3-f393-e0a9-e50e24dcca9e';
+        //var CHAR_UUID = '6e400002-b5a3-f393-e0a9-e50e24dcca9e';
 
         /**
          * Check if browser supports Web Bluetooth API.
@@ -245,7 +245,7 @@ Adabpted from Google's Dotti Web BLuetooth demo to BubblePy and Blinkt by wayne@
         });
 
         function clearPanel() {
-          for (let i=1; i<=8; i++) {
+          for (let i=1; i<=1; i++) {
             for(let j=1; j<=8; j++) {
               let button = document.querySelector('#button'+i+''+j);
               button.style.backgroundColor = "#000000";
