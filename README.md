@@ -2,7 +2,7 @@
 
 This is a [BubblePy](https://thebubbleworks.com/bubblepy/) demo of controlling a [Pimoroni Blinkt](https://shop.pimoroni.com/products/blinkt) via BluetoothLE on an [Arduino Primo](https://www.nordicsemi.com/eng/News/News-releases/Product-Related-News/Arduino-Primo-base-board-features-native-Bluetooth-low-energy-wireless-connectivity-and-NFC-Touch-to-Pair-using-Nordic-Semiconductor-nRF52832-SoCs).
 
-The Python code demonstrates BubblePy's MicroPython versions of [gpiozero](https://github.com/RPi-Distro/python-gpiozero) and [bluezero](https://github.com/ukBaz/python-bluezero) and can run on many different kinds of Bluetooth LE enabled devices (more details below), and non BLE device too.
+The Python code demonstrates BubblePy's MicroPython versions of [gpiozero](https://github.com/RPi-Distro/python-gpiozero) and [bluezero](https://github.com/ukBaz/python-bluezero) and can run on many different kinds of Bluetooth LE enabled devices (more details below).
 
 Of note, the code will run pretty much as-is on an Arduino Primo, a micro:bit, a RaspberryPi and others.
 
