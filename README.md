@@ -1,12 +1,12 @@
 # BubblePy Blinkt BLE + Web Bluetooth Demo
 
-This is a BubblePy demo of controlling some [Pimoroni Blinkt lights](https://shop.pimoroni.com/products/blinkt) via BluetoothLE.  The Blinkt is connected to an Arduino Primo here but BubblePy supports many other devices, please see the Python section below.
+This is a [BubblePy](https://thebubbleworks.com/bubblepy/) demo of controlling a [Pimoroni Blinkt](https://shop.pimoroni.com/products/blinkt) via BluetoothLE on an [Arduino Primo](https://www.nordicsemi.com/eng/News/News-releases/Product-Related-News/Arduino-Primo-base-board-features-native-Bluetooth-low-energy-wireless-connectivity-and-NFC-Touch-to-Pair-using-Nordic-Semiconductor-nRF52832-SoCs).
 
-The User Interface runs in a browser using the [Web Bluetooth JavaScript API](https://github.com/WebBluetoothCG/web-bluetooth#web-bluetooth). Web Blutooth is used for discovering and connecting to Bluetooth LE devices from within a browser, i.e. a native app or plugin on Desktop or Mobile is not required.
-
-The Python code demonstrates BubblePy's MicroPython versions of [gpiozero](https://github.com/RPi-Distro/python-gpiozero) and [bluezero](https://github.com/ukBaz/python-bluezero) and runs on multiple kinds of Bluetooth LE enabled devices (more details below).
+The Python code demonstrates BubblePy's MicroPython versions of [gpiozero](https://github.com/RPi-Distro/python-gpiozero) and [bluezero](https://github.com/ukBaz/python-bluezero) and can run on many different kinds of Bluetooth LE enabled devices (more details below), and non BLE device too.
 
 Of note, the code will run pretty much as-is on an Arduino Primo, a micro:bit, a RaspberryPi and others.
+
+The User Interface runs in a browser using the [Web Bluetooth JavaScript API](https://github.com/WebBluetoothCG/web-bluetooth#web-bluetooth). Web Blutooth is used for discovering and connecting to Bluetooth LE devices from within a browser, i.e. a native app or plugin on Desktop or Mobile is not required.
 
 
 ## User Interface
@@ -19,7 +19,7 @@ Here's the browser UI:
 
 ![LED Picker](./images/browser_led_picker.png "LED Picker")
 
-Here's the Blinkt:
+Here's the Blinkt on the Arduino Primo:
 
 ![Arduino Primo](./images/arduino_primo+blinkt.JPG "LED Colour Picker")
 
@@ -30,7 +30,7 @@ There is also a colour wheel to pick your own colours:
 
 ## Python Code
 
-The following Python code runs *almost* unmodified on [BubblePy](https://thebubbleworks.com/bubblepy/) on these devices:
+The Python code below runs in [BubblePy](https://thebubbleworks.com/bubblepy/) on these devices:
 
 - Arduino Primo
 - BBC micro:bit
@@ -38,6 +38,9 @@ The following Python code runs *almost* unmodified on [BubblePy](https://thebubb
 - Other Nordic Semiconductor nRF51 and nRF52 devices, e.g. RuuviTag, Red Bear Labs Nano
 
 **The DAT and CLK pins may need changing for some hardware platforms.*
+
+
+The Blinkt portions of the code below is a gpiozero version of the original Blinkt library found [here](https://github.com/pimoroni/blinkt).
 
 
 ```python
