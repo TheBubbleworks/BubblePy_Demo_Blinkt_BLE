@@ -1,6 +1,29 @@
+# BubblePy Blinkt BLE + Web Bluetooth Demo
+
+This is a BubblePy demo of controlling Pimoroni Blinkt lights via BluetoothLE.
+
+The User Interface runs in a browser and uses the [Web Bluetooth JavaScript API](https://github.com/WebBluetoothCG/web-bluetooth#web-bluetooth) for discovering and connecting to Bluetooth LE devices from within a browser, a native app or plugin on Desktop or Mobile is not required.
+
+The Python code demonstrates BubblePy's MicroPython versions of [gpiozero](https://github.com/RPi-Distro/python-gpiozero) and [bluezero](https://github.com/ukBaz/python-bluezero). This code runs on multiple target Bluetooth LE enabled devices (more details below).
 
 
-https://thebubbleworks.github.io/BubblePy_Demo_Blinkt_BLE/
+## User Interface
+
+Open the Web Bluetooth demo in a using this [link](https://thebubbleworks.github.io/BubblePy_Demo_Blinkt_BLE/).
+
+*Note: Please check your platform and browser are supported [here](https://github.com/WebBluetoothCG/web-bluetooth/blob/gh-pages/implementation-status.md).*
+
+
+## Python Code
+
+The following Python code runs *almost* unmodified on [BubblePy](https://thebubbleworks.com/bubblepy/) on these devices:
+
+- Arduino Primo
+- BBC micro:bit
+- Raspberry Pi
+- Other Nordic Semiconductor nRF51 and nRF52 devices, e.g. RuuviTag, Red Bear LAbs Nano, Adafruit Feather
+
+**The DAT and CLK pins may need changing for your hardware platform.*
 
 
 ```python
