@@ -106,7 +106,22 @@ def set_all(r,g,b):
     for x in range(8):
         set_pixel(x,r,g,b)
 
+###################
+# Bluetooth LE part
 
+# These are BLuetooth LE identifiers that are also used by a commercial LED display.
+
+# 128-Bit UUID's here, but 16 bit UUID's would work too, e.g. 0xFFF0 and 0xFFF3 in this case
+SERVICE_UUID =  '0000fff0-0000-1000-8000-00805f9b34fb'
+CHAR_UUID =    '0000fff3-0000-1000-8000-00805f9b34fb'
+
+
+# Command constants, received via BluetoothLE GATT write characteristic 
+
+CMD_CLEAR_PIXELS=0x0601
+CMD_SET_PIXEL=0x0702
+
+# Callback that is invoked when a Central device passes data to the 'write' characteristic (CHAR_UUID)
 def ble_write_callback(bytes):
     if len(bytes)>2:
         cmd = (bytes[0]<<8) + (bytes[1] & 0xff)
@@ -118,20 +133,6 @@ def ble_write_callback(bytes):
             if len(bytes) >=5:
                 set_all(bytes[2], bytes[3], bytes[4] )
     show()
-
-###################
-# Bluetooth LE part
-
-# These are BLuetooth LE identifiers that are also used by a commercial LED display.
-
-SERVICE_UUID =  '0000fff0-0000-1000-8000-00805f9b34fb'
-CHAR_UUID =    '0000fff3-0000-1000-8000-00805f9b34fb'
-
-
-# Command constants, received via BluetoothLE GATT  write characteristic
-
-CMD_CLEAR_PIXELS=0x0601
-CMD_SET_PIXEL=0x0702
 
 
 service = peripheral.Service(SERVICE_UUID, True)
