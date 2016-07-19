@@ -47,21 +47,15 @@ The Blinkt portions of the code below is a gpiozero version of the original Blin
 from gpiozero import OutputDevice
 from bluezero import peripheral
 
+#############
+# Blinkt part
+
+# (would ultimately live in it's own module)
+
 DAT = 23
 CLK = 24
 NUM_PIXELS = 8
 BRIGHTNESS = 7
-
-
-# These are BLuetooth LE identifiers that are used by a commercial LED display.
-SERVICE_UUID =  '0000fff0-0000-1000-8000-00805f9b34fb'
-CHAR_UUID =    '0000fff3-0000-1000-8000-00805f9b34fb'
-
-
-# Commands, received via BLE
-CMD_CLEAR_PIXELS=0x0601
-CMD_SET_PIXEL=0x0702
-
 
 dat = OutputDevice(DAT)
 clk = OutputDevice(CLK)
@@ -124,6 +118,21 @@ def ble_write_callback(bytes):
             if len(bytes) >=5:
                 set_all(bytes[2], bytes[3], bytes[4] )
     show()
+
+###################
+# Bluetooth LE part
+
+# These are BLuetooth LE identifiers that are also used by a commercial LED display.
+
+SERVICE_UUID =  '0000fff0-0000-1000-8000-00805f9b34fb'
+CHAR_UUID =    '0000fff3-0000-1000-8000-00805f9b34fb'
+
+
+# Command constants, received via BluetoothLE GATT  write characteristic
+
+CMD_CLEAR_PIXELS=0x0601
+CMD_SET_PIXEL=0x0702
+
 
 service = peripheral.Service(SERVICE_UUID, True)
 char = peripheral.Characteristic(CHAR_UUID, ['write'], 0)
