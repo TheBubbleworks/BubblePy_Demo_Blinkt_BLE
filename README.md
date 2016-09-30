@@ -26,6 +26,26 @@ Here's the Blinkt on the Arduino Primo:
 There is also a colour wheel to pick your own colours:
 ![Colour Picker](./images/browser_colour_picker.png "Colour Picker")
 
+## Wiring Setup
+
+To connect the Blinkt to the Primo please see the image below and note the following in the diagram:
+
+- Blue goes to Arduino 5v
+- White goes to Arduino GND 
+
+![Blinkt Wiring](./images/arduino_primo_blinkt_wiring.JPG "Blinkt Wiring")
+
+## Firmware Image
+
+A firmware image is avalable in Intel hex format [here](./firmware/bubblepy_blinkt_ble.hex)
+
+This firmware has been tested succesfully with the following OS'es, hardware and Chrome Browser combinations:
+
+* Android 6.0.1 (Nexus 7 Tablet): Chrome Version 52.0.2743.98
+* macOS Sierra (Mac Book Pro 2015):  53.0.2785.143 (64-bit) (note: requires WebBluetooth flag enabled first)
+* Chromebook (Toshiba Chromebook 2): ChromeOS 53.0.2785.103 (64-bit)  (note: requires WebBluetooth flag enabled first)
+* Windows: not supported
+
 
 
 ## Python Code
@@ -41,6 +61,7 @@ The Python code below runs in [BubblePy](https://thebubbleworks.com/bubblepy/) o
 
 
 The Blinkt portions of the code below is a gpiozero version of the original Blinkt library found [here](https://github.com/pimoroni/blinkt).
+A native MicroPython 'blinkt' module is also available, therefore the demonstrative code below would be much smaller in practice.
 
 
 ```python
@@ -50,7 +71,7 @@ from bluezero import peripheral
 #############
 # Blinkt part
 
-# (would ultimately live in it's own module)
+# (for demonstration purposes, there's a MicroPython 'blinkt' module available to import)
 
 DAT = 23
 CLK = 24
@@ -109,14 +130,14 @@ def set_all(r,g,b):
 ###################
 # Bluetooth LE part
 
-# These are BLuetooth LE identifiers that are also used by a commercial LED display.
+# These are Bluetooth LE unique identifiers that are also used by a commercial LED display.
 
 # 128-Bit UUID's here, but 16 bit UUID's would work too, e.g. 0xFFF0 and 0xFFF3 in this case
 SERVICE_UUID =  '0000fff0-0000-1000-8000-00805f9b34fb'
 CHAR_UUID =    '0000fff3-0000-1000-8000-00805f9b34fb'
 
 
-# Command constants, received via BluetoothLE GATT write characteristic 
+# Command constants, received when the WebBluetooth client writes to the BluetoothLE GATT characteristic 
 
 CMD_CLEAR_PIXELS=0x0601
 CMD_SET_PIXEL=0x0702
@@ -144,3 +165,5 @@ service.add_characteristic(char)
 peripheral.add_service(service)
 peripheral.start()
 ```
+
+
