@@ -6,12 +6,12 @@ The Python code demonstrates BubblePy's MicroPython versions of [gpiozero](https
 
 Of note, the code will run pretty much as-is on an Arduino Primo, a micro:bit, a RaspberryPi and others.
 
-The User Interface runs in a browser using the [Web Bluetooth JavaScript API](https://github.com/WebBluetoothCG/web-bluetooth#web-bluetooth). Web Blutooth is used for discovering and connecting to Bluetooth LE devices from within a browser, i.e. a native app or plugin on Desktop or Mobile is not required.
+The User Interface runs in a browser using the [Web Bluetooth JavaScript API](https://github.com/WebBluetoothCG/web-bluetooth#web-bluetooth). Web Blutooth is used for discovering and connecting to Bluetooth LE devices from within a browser, e.g. a native app or plugin on Desktop or Mobile is not required.
 
 
 ## User Interface
 
-You can open the Web Bluetooth demo in a using this [link](https://thebubbleworks.github.io/BubblePy_Demo_Blinkt_BLE/).
+You can open the Web Bluetooth demo [here](https://thebubbleworks.github.io/BubblePy_Demo_Blinkt_BLE/).
 
 *Note: Please check your platform and browser are supported [here](https://github.com/WebBluetoothCG/web-bluetooth/blob/gh-pages/implementation-status.md).*
 
@@ -37,9 +37,9 @@ To connect the Blinkt to the Primo please see the image below and note the follo
 
 ## Firmware Image
 
-A firmware image is avalable in Intel hex format [here](./firmware/bubblepy_blinkt_ble.hex)
+A firmware image is available in Intel hex format [here](./firmware/bubblepy_blinkt_ble.hex)
 
-This firmware has been tested succesfully with the following OS'es, hardware and Chrome Browser combinations:
+This firmware has been tested successfully on the following OS'es, hardware and Chrome Browser combinations:
 
 * Android 6.0.1 (Nexus 7 Tablet): Chrome Version 52.0.2743.98
 * macOS Sierra (Mac Book Pro 2015):  53.0.2785.143 (64-bit) (note: requires WebBluetooth flag enabled first)
@@ -50,7 +50,7 @@ This firmware has been tested succesfully with the following OS'es, hardware and
 
 ## Python Code
 
-The Python code below runs in [BubblePy](https://thebubbleworks.com/bubblepy/) on these devices:
+The Python code below runs via [BubblePy](https://thebubbleworks.com/bubblepy/) on these devices:
 
 - Arduino Primo
 - BBC micro:bit
@@ -60,7 +60,7 @@ The Python code below runs in [BubblePy](https://thebubbleworks.com/bubblepy/) o
 **The DAT and CLK pins may need changing for some hardware platforms.*
 
 
-The Blinkt portions of the code below is a gpiozero version of the original Blinkt library found [here](https://github.com/pimoroni/blinkt).
+The Blinkt portion of the code below is a gpiozero version of the original Blinkt library found [here](https://github.com/pimoroni/blinkt).
 A native MicroPython 'blinkt' module is also available, therefore the demonstrative code below would be much smaller in practice.
 
 
