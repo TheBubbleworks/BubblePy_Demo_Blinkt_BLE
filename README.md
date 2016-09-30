@@ -33,7 +33,7 @@ To connect the Blinkt to the Primo please see the image below and note the follo
 - Blue goes to Arduino 5v
 - White goes to Arduino GND 
 
-![Blinkt Wiring](./images/arduino_primo_blinkt_wiring.JPG "Blinkt Wiring")
+![Blinkt Wiring](./images/arduino_primo_blinkt_wiring.jpg "Blinkt Wiring")
 
 ## Firmware Image
 
